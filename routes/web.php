@@ -49,5 +49,7 @@ Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('exi
 Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('addcarrinho');
 Route::post('/remover', [CarrinhoController::class, 'removeCarrinho'])->name('removecarrinho');
 Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('atualizacarrinho');
+Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpacarrinho');
+
 
 require __DIR__.'/auth.php';

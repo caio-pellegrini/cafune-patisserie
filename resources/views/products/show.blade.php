@@ -23,6 +23,7 @@
             <input type="hidden" name="price" value="{{ $product->price }}">
             <input type="number" name="qnt" value="1">
             <input type="hidden" name="img" value="{{ $product->product_image }}">
+            <input type="hidden" name="unit" value="{{ $product->unit_of_measure }}">
 
             <button class="btn orange btn-large">Comprar</button>
         </form>
