@@ -69,7 +69,7 @@
             margin-left: 250px;
             margin-right: 250px;
             font-size: 20px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
        /* Estilo específico para a fundadora */
@@ -117,28 +117,29 @@
 }
 
 .cafuné-intro {
-    max-width: 800px; /* Largura máxima para a seção */
-    padding: 40px 20px; /* Padding para não colar no lado da tela */
+    max-width: 800px;
+    margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .cafuné-image {
-    max-width: 100%; /* Faz a imagem responsiva */
-    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
-    margin-left: 150px;
+    max-width: 100%;
+    display: block; /* Altere para 'block' para corrigir o espaço extra abaixo da imagem */
+    margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
+}
+
+.cafuné-caption {
+    font-size: 14px;
+    margin-top: 10px; /* Altere para 'margin-top' para melhor espaçamento entre a imagem e a legenda */
+    font-family: 'Lateef', serif;
+    color: #707070;
 }
 
 .cafuné-text {
     font-size: 20px; /* Tamanho do texto */
     margin-bottom: 20px; /* Espaço entre o texto e a legenda */
     margin-left: auto;
-}
-
-.cafuné-caption {
-    font-size: 14px; /* Tamanho da legenda */
-    margin-left: 260px;
-    margin-bottom: 60px;
-    font-family: 'Lateef', serif;
-    color: #707070; /* Cor da legenda */
 }
 
     </style>
