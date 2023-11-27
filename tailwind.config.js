@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 lateef: ['Lateef', 'serif'],
+                aurore: ['La Belle Aurore', 'serif']
             },
 
             backgroundColor: {
