@@ -17,7 +17,10 @@ class ProductController extends Controller
 
     public function show($id)
     {
+        
         $product = Product::findOrFail($id); // Encontra o produto ou falha com erro 404
+        //$type = gettype($product->price);
+        //dd($type);
         return view('products.show', compact('product')); // Retorna a view com o produto específico
     }
 }

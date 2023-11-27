@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CarrinhoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/cardapio', [ProductController::class, 'index'])->name('cardapio'); // Rota para listar todos os produtos
-Route::get('/products/{id}', [ProductController::class, 'show']); // Rota para exibir detalhes de um produto
+Route::get('/cardapio/{id}', [ProductController::class, 'show'])->name('detalhes'); // Rota para exibir detalhes de um produto
+
+Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('exibircarrinho');
+Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('addcarrinho');
+Route::post('/remover', [CarrinhoController::class, 'removeCarrinho'])->name('removecarrinho');
+Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('atualizacarrinho');
 
 require __DIR__.'/auth.php';
