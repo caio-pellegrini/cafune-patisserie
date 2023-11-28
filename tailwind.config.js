@@ -24,6 +24,11 @@ export default {
                 'cafune': '#8190A0',
                 'azur': '#2C2B4C',
             },
+
+            colors:
+             {
+                'azur': '#2C2B4C',
+            },
         },
     },
 

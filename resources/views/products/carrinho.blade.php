@@ -29,10 +29,20 @@
 <body class="antialiased">
   @include('layouts.navigation')
 
-
+  <!-- Popup Message Box -->
+  <div id="popup-message" class="hidden fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded shadow-lg p-4 z-50">
+      <p id="popup-message-content" class="text-sm text-gray-700">Your message here...</p>
+    </div>
 
   <div class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-    @if ($mensagem = Session::get('sucesso'))
+  @if ($mensagem = Session::get('sucesso'))
+  <script>
+    showPopupMessage("{{ $mensagem }}", 3000);
+  </script>
+  @endif
+
+  
+  @if ($mensagem = Session::get('sucesso'))
     <div id="alert-3" class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
     
     <svg
@@ -58,6 +68,7 @@
     </div>
     @endif
 
+    <!--
     @if ($mensagem = Session::get('aviso'))
     <div class="card green">
       <div class="card-content white-text">
@@ -66,18 +77,25 @@
       </div>
     </div>
     @endif
+    -->
+
+    
+
 
     @if($itens->count() == 0)
-    <div class="card yellow">
+    <div class="card blue">
       <div class="card-content white-text">
         <span class="card-title">Seu carrinho está vazio</span>
         <p>Aproveite nossas promoções</p>
       </div>
     </div>
+
+
     @else
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
       {{ __('Seu carrinho possui '). $itens->count() .__(' itens.') }}
     </h2>
+
 
 
 
@@ -149,6 +167,23 @@
       });
 
     });
+
+    function showPopupMessage(message, duration = 5000) {
+    const popup = document.getElementById('popup-message');
+    const content = document.getElementById('popup-message-content');
+
+    // Set the message
+    content.textContent = message;
+
+    // Show the popup
+    popup.classList.remove('hidden');
+
+    // Set a timer to hide the popup after 'duration' milliseconds
+    setTimeout(() => {
+      popup.classList.add('hidden');
+    }, duration);
+  }
+
   </script>
 
 </body>

@@ -26,7 +26,7 @@
                     </x-nav-link>
                     <x-nav-link :href="route('exibircarrinho')" :active="request()->routeIs('exibircarrinho')">
                         {{ __('CARRINHO') }}
-                        <span class="new badge blue" data-badge-caption=""> {{ \Cart::getContent()->count() }} </span>
+                        <span class="red rounded fill" data-badge-caption=""> {{ \Cart::getContent()->count() }} </span>
                     </x-nav-link>
                 </div>
             </div>

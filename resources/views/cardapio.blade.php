@@ -23,10 +23,21 @@
 
     <style>
         :target {
-  scroll-margin-top: 110px;
-}
+            scroll-margin-top: 110px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 600,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        .material-google {
+            margin-top: 8px;
+        }
     </style>
-    
 
 </head>
 
@@ -47,9 +58,9 @@
 
 
     <div class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white {{ request()->routeIs('cardapio') ? 'pt-16' : '' }}">
-    {{--Links acesso rápido --}}
-    <div class="flex justify-center space-x-4 bg-gray-100 p-4 fixed  w-full z-50 ">
-            
+        {{--Links acesso rápido --}}
+        <div class="flex justify-center space-x-4 bg-gray-100 p-4 fixed  w-full z-50 ">
+
             @foreach ($categories as $category)
             <a href="#{{ strtolower($category->name) }}" class="font-sans px-5 py-1 text-white rounded-3xl bg-azur hover:bg-cafune transition duration-300">
                 {{ mb_strtoupper($category->name, 'UTF-8') }}
@@ -58,9 +69,26 @@
         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         @if($categories->count())
         @foreach ($categories as $category)
-            <div id="{{ strtolower($category->name) }}" class="md:max-w-2x1 md:mx-60 items-center justify-between px-4 py-5 my-10">
+        <div id="{{ strtolower($category->name) }}" class="md:max-w-2x1 md:mx-28 lg:mx-56 items-center justify-between px-4 py-5 my-10">
             <h3 class="font-bold text-xl">{{ $category->name }}</h3> {{-- Nome da categoria --}}
 
             <div class="space-y-4"> {{-- Produtos da categoria --}}
@@ -77,54 +105,64 @@
                         <p class="text-gray-500 mr-2">R$ {{ number_format($product->price, 2, ',', '.') }}/{{ $product->unit_of_measure }}</p> {{-- Estilos de preço do produto --}}
                     </div>
 
-                    <!--
-                {{-- Botões de ação e unidade selecionada --}}
-                <div class="flex items-center">
-                    <button class="text-gray-500 bg-transparent hover:bg-gray-200 p-2 rounded-full">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M19,13H5V11H19V13Z" />
-                        </svg>
-                    </button>
-                    <span class="mx-2 text-lg">1</span> {{-- A unidade selecionada --}}
-                    <button class="text-gray-500 bg-transparent hover:bg-gray-200 p-2 rounded-full">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M13,19V5h-2v14H13Z M19,13H5v-2H19v2Z" />
-                        </svg>
-                    </button>
-                </div>
-                -->
-
-                    <div class="flex items-center">
+                    <div class="flex items-center space-x-2">
                         <form class="add-to-cart-form" action="{{ route('addcarrinho') }}" method="POST">
 
                             @csrf
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="name" value="{{ $product->name }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
-                            <input style="width: 80px;" type="number" name="qnt" min="0" value="0">
                             <input type="hidden" name="img" value="{{ $product->product_image }}">
                             <input type="hidden" name="unit" value="{{ $product->unit_of_measure }}">
+                            <div class="flex items-center">
+                                {{-- Botões de adição e remoção --}}
+                                <button type="button" class="decrease-quantity text-azur bg-transparent hover:bg-gray-200 p-2 rounded-full" data-id="{{ $product->id }}">
+                                    <span class="material-symbols-outlined material-google">remove</span>
+                                </button>
+                                <span id="quantity-{{ $product->id }}">0</span>
+                                <button type="button" class="increase-quantity text-azur bg-transparent hover:bg-gray-200 p-2 rounded-full" data-id="{{ $product->id }}">
+                                    <span class="material-symbols-outlined material-google">add</span>
+                                </button>
 
-                            <button><i class="shopping-cart-btn material-icons material-symbols-outlined">
-                                    shopping_cart
-                                </i></button>
+                                {{-- Input escondido para armazenar a quantidade --}}
+                                <input type="hidden" name="qnt" id="input-quantity-{{ $product->id }}" value="0">
+
+                                <button><i class="shopping-cart-btn material-icons material-symbols-outlined">
+                                        add_shopping_cart
+                                    </i></button>
+                            </div>
+
                         </form>
-
-                                            
-
-
-
-
                     </div>
+                    @if ((session('adicionado') == $product->id))
+                    <!-- Popup Message Box -->
+                    <div id="popup-message" class=" fixed bottom-4 right-4 bg-white border border-gray-200 rounded shadow-lg p-4 z-50">
+                    <p id="popup-message-content" class="text-sm text-gray-700">Your message here...</p>
+                    </div>
+
+                    
+                    <div id="alert-3" class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Success</span>
+                        <div class="ms-3 text-sm font-medium">Produto adicionado</div>
+                        <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-3" aria-label="Close">
+                            <span class="sr-only">Close</span>
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    @endif
 
                 </div>
                 <hr>
+
                 @endforeach
             </div>
-</div>
-
-        
-
+        </div>
 
         @endforeach
         @else
@@ -148,6 +186,34 @@
                 });
 
             });
+
+            document.querySelectorAll('.increase-quantity').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var productId = this.getAttribute('data-id');
+                    var quantitySpan = document.getElementById('quantity-' + productId);
+                    var quantityInput = document.getElementById('input-quantity-' + productId);
+
+                    var currentQuantity = parseInt(quantitySpan.textContent, 10);
+                    quantitySpan.textContent = currentQuantity + 1;
+                    quantityInput.value = currentQuantity + 1;
+                });
+            });
+
+            document.querySelectorAll('.decrease-quantity').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var productId = this.getAttribute('data-id');
+                    var quantitySpan = document.getElementById('quantity-' + productId);
+                    var quantityInput = document.getElementById('input-quantity-' + productId);
+
+                    var currentQuantity = parseInt(quantitySpan.textContent, 10);
+                    if (currentQuantity > 0) {
+                        quantitySpan.textContent = currentQuantity - 1;
+                        quantityInput.value = currentQuantity + 1;
+                    };
+
+                })
+            });
+
         });
     </script>
 </body>
