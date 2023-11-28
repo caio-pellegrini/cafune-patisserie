@@ -1,188 +1,77 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-        
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>Laravel</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
 
-    <style>
-        /*  teste */
+</head>
 
-        body {
-        font-family: 'La Belle Aurore', serif; /* Substitua 'SuaFonte' pela fonte que desejar */
-        background: #ffffff; /* Cor de fundo da página */
-        color: #333; /* Cor padrão do texto */
-        }
+<body class="font-aurore bg-[#ffffff] text-[#333] antialiased">
+    @include('layouts.navigation')
 
-        #slogan {
-    font-family: 'La Belle Aurore', cursive; 
-    color: #000;
-    text-align: center; /* Alinha o texto ao centro */
-    margin: 50px 40px; /* Margens superior e inferior fixas, esquerda e direita automáticas */
-    max-width: 80%; /* Ajuste a largura máxima conforme necessário */
-    }
 
-    /* Se você deseja usar flexbox para centralizar */
-    #slogan-container {
-    display: flex;
-    justify-content: center; /* Alinha horizontalmente ao centro */
-    align-items: center; /* Alinha verticalmente ao centro */
-    }
-
-    h1 {
-    font-size: 2.5rem;
-    color: #000;
-    }
-
-        /* Estilo dos parágrafos */
-        p {
-        margin-bottom: 3px; /* Espaço abaixo dos parágrafos */
-        color: #555; /* Cor do texto dos parágrafos */
-        }
-
-        /* Estilo das imagens */
-        img {
-        max-width: 80%; /* Faz as imagens serem responsivas */
-        height: 300px; /* Mantém a proporção das imagens */
-        }
-
-        /* Estilo das seções */
-        section {
-        margin-bottom: 20px; /* Espaço abaixo das seções */
-        }
-
-        .sobre{
-            margin-left: 250px;
-            margin-right: 250px;
-            font-size: 20px;
-            margin-top: 30px;
-        }
-
-       /* Estilo específico para a fundadora */
-       .fundadora {
-    display: flex;
-    justify-content: center; /* Alinha horizontalmente ao centro */
-    align-items: center; /* Alinha verticalmente ao centro */
-    background: #f8f8f8; /* Cor de fundo */
-    padding: 10px;
-    border: 1px solid #ddd; /* Borda externa */
-}
-
-.texto-fundadora {
-    flex: 1; /* O texto ocupa o espaço disponível */
-    text-align: justify; /* Justifica o texto */
-    padding: 20px; /* Espaço interno */
-    font-family: 'Lateef', serif;
-    font-size: 18px;
-    /* Removido min-width e border-right */
-}
-
-.fundadora img {
-    max-width: 100%; /* Permite que a imagem cresça até 100% de seu container */
-    height: auto; /* Mantém a proporção da imagem */
-    padding: 10px; /* Espaço interno */
-    /* Removido flex, min-width e max-width */
-}
-
-/* Responde ao tamanho da tela */
-@media (max-width: 768px) {
-    .fundadora {
-        flex-direction: column;
-    }
-
-    .texto-fundadora {
-        text-align: center; /* Centraliza o texto em telas pequenas */
-        padding: 10px; /* Espaço interno ajustado para telas pequenas */
-        /* Removido border-right */
-    }
-
-    .fundadora img {
-        max-width: 100%; /* A imagem ocupa 100% da largura em telas pequenas */
-        margin-top: 20px; /* Espaço acima da imagem em telas pequenas */
-    }
-}
-
-.cafuné-intro {
-    max-width: 800px;
-    margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.cafuné-image {
-    max-width: 100%;
-    display: block; /* Altere para 'block' para corrigir o espaço extra abaixo da imagem */
-    margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
-}
-
-.cafuné-caption {
-    font-size: 14px;
-    margin-top: 10px; /* Altere para 'margin-top' para melhor espaçamento entre a imagem e a legenda */
-    font-family: 'Lateef', serif;
-    color: #707070;
-}
-
-.cafuné-text {
-    font-size: 20px; /* Tamanho do texto */
-    margin-bottom: 20px; /* Espaço entre o texto e a legenda */
-    margin-left: auto;
-}
-
-    </style>
-       
-    </head>
-    <body class="antialiased">
-        @include('layouts.navigation')
-
-        
-        <div id="slogan-container">
-    <div id="slogan">
-        <h1>Cafuné, le goût de l'affection</h1>
+    <div id="flex justify-center items-center">
+        <div id="text-[#000] text-center mx-[40px] my-[50px] max-w-[80%]">
+            <h1 class="text-[2.5rem] text-[#000] flex justify-center mt-[50px] text-2.5xl md:text-4xl lg:text-5xl">Cafuné, le goût de l'affection</h1>
+        </div>
     </div>
-</div>
 
-    <section class="sobre">
-        <p>Bem-vindo à Cafuné Pâtisserie, onde cada doce conta uma história de carinho e sabor. Fundada com paixão e tradição, a Cafuné é mais do que uma simples padaria, é um refúgio de afeto onde os aromas da França se encontram com a calorosa hospitalidade brasileira!</p>
+    <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
+        <p class="mb-[3px] text-[#555]">Bem-vindo à Cafuné Pâtisserie, onde cada doce conta uma história de carinho e sabor. Fundada com paixão e tradição, a Cafuné é mais do que uma simples padaria, é um refúgio de afeto onde os aromas da França se encontram com a calorosa hospitalidade brasileira!</p>
     </section>
 
-    <section class="fundadora">
-    <div class="texto-fundadora">
-        <p>Nossa fundadora, Margot Blanc, nascida em Paris, trouxe consigo não apenas receitas tradicionais, <br> mas também a essência da cidade do amor. Apaixonada pela arte da pâtisserie desde jovem, ela veio ao Brasil, <br> onde decidiu criar a Cafuné, uma padaria de alto padrão.</p>
-        <p>Essa grande mulher tornou seu sonho realidade e trouxe um lugar com experiência única para os brasileiros.</p>
-    </div>
-    <img src="{{ asset('/images/Criadora.png') }}" alt="Margot Blanc">
-</section>
-
-
-    <section class="sobre">
-        <p>Queremos que cada visita à Cafuné seja como um abraço caloroso. Nosso ambiente foi projetado para oferecer não apenas deliciosas opções de pâtisserie, mas também um espaço onde os clientes se sintam em casa.</p>
+    <section class="items-center p-[5px] flex justify-center items-center flex-wrap text-center max-w-[800px] mx-[auto] my-[0] bg-[#f8f8f8] p-[10px] border-[1px] border-[solid] border-[#ddd] mt-[50px] mb-[50px]">
+        <div class="flex-[1] text-justify p-[20px] font-['Lateef',_serif] text-[18px]">
+            <p class="mb-[3px] text-[#555]">Nossa fundadora, Margot Blanc, nascida em Paris, trouxe consigo não apenas receitas tradicionais, mas também a essência da cidade do amor. Apaixonada pela arte da pâtisserie desde jovem, ela veio ao Brasil,onde decidiu criar a Cafuné, uma padaria de alto padrão.</p>
+            <p class="mb-[3px] text-[#555]">Essa grande mulher tornou seu sonho realidade e trouxe um lugar com experiência única para os brasileiros.</p>
+        </div>
+        <img class="max-w-[80%] h-[280px] max-w-full h-auto p-[15px] transition-transform transform hover:scale-110" src="{{ asset('/images/Criadora.png') }}" alt="Margot Blanc">
     </section>
 
-    <section class="cafuné-intro">
-        <img src="{{ asset('/images/Retrô.png') }}" alt="A primeira loja Cafuné do Brasil - 1963" class="cafuné-image">
-        <p class="cafuné-caption">
+
+    <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
+        <p class="mb-[3px] text-[#555]">Queremos que cada visita à Cafuné seja como um abraço caloroso. Nosso ambiente foi projetado para oferecer não apenas deliciosas opções de pâtisserie, mas também um espaço onde os clientes se sintam em casa.</p>
+    </section>
+
+    <section class="max-w-[800px] mx-[auto] my-[0] px-[20px] py-[40px] text-center">
+        <img class="max-w-[80%] h-[300px] max-w-full block mx-[auto] my-[0] transition-transform transform hover:scale-110" src="{{ asset('/images/Retrô.png') }}" alt="A primeira loja Cafuné do Brasil - 1963" class="cafuné-image">
+        <p class="text-[14px] mt-[10px] font-['Lateef',_serif] text-[#707070]">
             A primeira loja Cafuné do Brasil - 1963
-    </p>
-
+        </p>
     </section>
-    <section class="sobre">
-            Na Cafuné, acreditamos que a boa comida tem o poder de unir as pessoas. Estamos aqui para compartilhar um pedacinho da França, um sorriso acolhedor e, é claro, muitos doces momentos com você. Seja bem-vindo à nossa casa, a Cafuné Pâtisserie.
-        </section>
-        
-    
-    </body>
+
+    <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
+        Na Cafuné, acreditamos que a boa comida tem o poder de unir as pessoas. Estamos aqui para compartilhar um pedacinho da França, um sorriso acolhedor e, é claro, muitos doces momentos com você. Seja bem-vindo à nossa casa, a Cafuné Pâtisserie.
+    </section>
+
+    <hr>
+
+    <h3 class="mt-[30px] text-[28px] text-center">Lojas Atuais</h3>
+
+    <section class="flex justify-center items-center flex-wrap mx-[0] my-[20px]">
+        <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 1.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
+        <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 2.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
+        <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 3.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
+    </section>
+
+
+
+</body>
+
 </html>
