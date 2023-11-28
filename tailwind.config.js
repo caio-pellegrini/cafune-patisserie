@@ -20,7 +20,8 @@ export default {
             },
 
             backgroundColor: {
-                'cafune': '#8190A0CC',
+                'cafune-transparente': '#8190A0CC',
+                'cafune': '#8190A0',
                 'azur': '#2C2B4C',
             },
         },
