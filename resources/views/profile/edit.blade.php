@@ -4,7 +4,7 @@
             {{ __('Perfil') }}
         </h2>
     </x-slot>
-    <div class="py-12"> <!-- Fundo cinza claro como na imagem -->
+    <div class="py-12">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card de imagem de perfil -->
             <div class="md:col-span-1 space-y-6">

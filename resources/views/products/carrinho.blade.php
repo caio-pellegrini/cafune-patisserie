@@ -143,9 +143,10 @@
     <div class="row container center">
 
 
-      <a href=" {{ route('cardapio') }}" class="btn waves-effect waves-light blue">Continuar comprando<i class="material-icons">arrow_back</i></a>
+      <a href="{{ route('cardapio') }}" class="btn waves-effect waves-light blue">Continuar comprando<i class="material-icons">arrow_back</i></a>
       <a href="{{ route('limpacarrinho') }}" class="btn waves-effect waves-light blue">Limpar carrinho<i class="material-icons">clear</i></a>
-      <button class="btn waves-effect waves-light green">Finalizar pedido<i class="material-icons">check</i></button>
+      
+      <a href="{{ route('listarCheckout') }}"class="btn waves-effect waves-light green">Finalizar pedido<i class="material-icons">check</i></a>
     </div>
 
     @endif

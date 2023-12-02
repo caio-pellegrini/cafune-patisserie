@@ -59,10 +59,6 @@
             <x-input-error class="mt-2" :messages="$errors->get('address')" />
         </div>
 
-        
-
-
-
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>

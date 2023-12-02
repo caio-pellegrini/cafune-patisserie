@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,9 @@ Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name(
 Route::post('/remover', [CarrinhoController::class, 'removeCarrinho'])->name('removecarrinho');
 Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('atualizacarrinho');
 Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpacarrinho');
+
+Route::get('/checkout', [CheckoutController::class, 'resumoPedido'])->name('listarCheckout');
+Route::post('/checkout', [CheckoutController::class, 'resumoPedido'])->name('processarCheckout');
 
 
 require __DIR__.'/auth.php';

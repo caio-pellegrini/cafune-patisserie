@@ -95,10 +95,11 @@
                 @foreach ($category->products as $product)
                 <div class="flex items-center justify-between p-4">
                     {{-- Exibe a imagem --}}
-                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->name }}" class="h-16 w-16 rounded-full object-cover"> {{-- Estilos de imagem do produto --}}
+                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->name }}" class="h-14 w-14 rounded-full object-cover"> {{-- Estilos de imagem do produto --}}
 
-                    <div class="flex-grow">
+                    <div class="flex-grow ml-4">
                         <h2 class="font-bold text-lg">{{ $product->name }}</h2> {{-- Estilos de nome do produto --}}
+                        <p class="text-gray-500">{{ $product->description }}</p>
                     </div>
 
                     <div class="">
