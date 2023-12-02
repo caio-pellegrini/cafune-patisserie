@@ -53,7 +53,7 @@ Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name
 Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpacarrinho');
 
 Route::get('/checkout', [CheckoutController::class, 'resumoPedido'])->name('listarCheckout');
-Route::post('/checkout', [CheckoutController::class, 'resumoPedido'])->name('processarCheckout');
+Route::post('/checkout', [CheckoutController::class, 'finalizarPedido'])->name('processarCheckout');
 
 
 require __DIR__.'/auth.php';

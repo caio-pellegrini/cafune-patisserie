@@ -11,4 +11,8 @@ class CheckoutController extends Controller
         $user = auth()->user();
         return view('checkout', compact('cartItems', 'user'));
     }
+
+    public function finalizarPedido() {
+
+    }
 }

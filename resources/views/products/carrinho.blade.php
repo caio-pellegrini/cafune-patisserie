@@ -147,6 +147,8 @@
       <a href="{{ route('limpacarrinho') }}" class="btn waves-effect waves-light blue">Limpar carrinho<i class="material-icons">clear</i></a>
       
       <a href="{{ route('listarCheckout') }}"class="btn waves-effect waves-light green">Finalizar pedido<i class="material-icons">check</i></a>
+      <x-primary-button><i class="material-icons">check</i>{{ __('Save') }}</x-primary-button>
+
     </div>
 
     @endif

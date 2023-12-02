@@ -64,6 +64,10 @@
                             <section>
                                 <h2 class="text-xl font-semibold mb-2">{{ __('Informações de perfil') }}</h2>
 
+                                <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+                                    @csrf
+                                </form>
+
                                 <form method="post" action="{{ route('profile.edit') }}" class="mt-6 space-y-6">
                                     @csrf
                                     @method('patch')
