@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +55,8 @@ Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name
 Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpacarrinho');
 
 Route::get('/checkout', [CheckoutController::class, 'resumoPedido'])->name('listarCheckout');
-Route::post('/checkout', [CheckoutController::class, 'finalizarPedido'])->name('processarCheckout');
+Route::get('pedidos', [OrderController::class, 'index'])->name('verPedidos');
+Route::post('/pedidos', [OrderController::class, 'store'])->name('novoPedido');
 
 
 require __DIR__.'/auth.php';

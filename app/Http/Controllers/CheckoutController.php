@@ -12,7 +12,5 @@ class CheckoutController extends Controller
         return view('checkout', compact('cartItems', 'user'));
     }
 
-    public function finalizarPedido() {
-
-    }
+    
 }
