@@ -58,7 +58,7 @@
                             </div>
                             @endforeach
                             {{-- Título e Botão para Retornar ao Carrinho --}}
-            <a href="{{ route('cardapio') }}" class=" mt-4 inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+            <a href="{{ route('exibircarrinho') }}" class=" mt-4 inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
           <span class="material-symbols-outlined material-google mr-1">arrow_back</span>  
           Voltar para Carrinho
           </a>
