@@ -21,9 +21,6 @@
                     <x-nav-link :href="route('cardapio')" :active="request()->routeIs('cardapio')">
                         {{ __('CARDÁPIO') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('contato')" :active="request()->routeIs('contato')">
-                        {{ __('CONTATO') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('exibircarrinho')" :active="request()->routeIs('exibircarrinho')">
                         {{ __('CARRINHO') }}
                         <span class="red rounded fill" data-badge-caption=""> {{ \Cart::getContent()->count() }} </span>
@@ -55,6 +52,10 @@
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile.edit')">
                                 {{ __('PERFIL') }}
+                            </x-dropdown-link>
+                            
+                            <x-dropdown-link :href="route('pedidos')">
+                                {{ __('MEUS PEDIDOS') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->
@@ -111,9 +112,6 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('CARDÁPIO') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('CONTATO') }}
             </x-responsive-nav-link>
 
         </div>
