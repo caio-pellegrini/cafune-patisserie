@@ -9,6 +9,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminAuthController;
 
 
 /*
@@ -56,10 +58,16 @@ Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpa
 
 Route::get('/checkout', [CheckoutController::class, 'resumoPedido'])->name('listarCheckout');
 
-
 Route::post('/pedidos', [OrderController::class, 'store'])->name('novoPedido');
-
 Route::get('/pedidos', [OrderController::class, 'index'])->name('pedidos');
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
+});
+Route::get('/admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+
 
 
 require __DIR__.'/auth.php';
