@@ -39,23 +39,24 @@ class OrderController extends Controller
             $orderItem->save();
         }
 
-        // Retorna uma mensagem ao usuário
-        return response()->json([
-            'sucess' => true,
-            'message' => 'Pedido criado com sucesso',
-            'order_id' => $order->id
-        ]);
+        // Limpar carrinho
+        \Cart::clear();
+
+        // Redirecionar para a página de pedidos com mensagem de sucesso
+        return redirect()->route('pedidos')->with('success', 'Pedido realizado com sucesso!');
 
     }
 
 
     public function index()
 {
+    // Array para pedidos atuais
     $currentOrders = Order::with('orderItems.product')
                           ->where('user_id', Auth::id())
-                          ->whereNotIn('status', ['concluido', 'cancelado']) // Exemplo de status
+                          ->whereNotIn('status', ['concluido', 'cancelado'])
                           ->get();
 
+    // Array para pedidos passados
     $pastOrders = Order::with('orderItems.product')
                         ->where('user_id', Auth::id())
                         ->whereIn('status', ['concluido', 'cancelado'])
