@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Sobre nós | Cafuné</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -64,11 +64,13 @@
 
     <h3 class="mt-[30px] text-[28px] text-center">Lojas Atuais</h3>
 
-    <section class="flex justify-center items-center flex-wrap mx-[0] my-[20px]">
+    <section class="flex justify-center items-center flex-wrap mx-[0] mt-[20px] mb-20">
         <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 1.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
         <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 2.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
         <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 3.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
     </section>
+
+    @include('layouts.footer')
 
 
 

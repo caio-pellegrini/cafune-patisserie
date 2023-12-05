@@ -44,7 +44,6 @@ class OrderController extends Controller
 
         // Redirecionar para a página de pedidos com mensagem de sucesso
         return redirect()->route('pedidos')->with('success', 'Pedido realizado com sucesso!');
-
     }
 
 

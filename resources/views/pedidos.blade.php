@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Meus pedidos | Cafuné</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -35,10 +35,6 @@
 
 
 
-
-
-
-
     @if(session('success'))
     <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
         <p class="font-bold">Sucesso</p>
@@ -56,7 +52,8 @@
     @foreach($currentOrders as $pedido)
     <div class="border-b border-gray-200 mb-4 pb-4">
         <h3 class="text-md font-semibold text-gray-600">Pedido #{{ $pedido->id }}</h3>
-        <p class="text-sm text-gray-500">Status: <span class="text-green-500">{{ $pedido->status }}</span></p>
+        @php $statusInfo = \App\Helpers\StatusHelper::formatStatus($pedido->status); @endphp
+        <p class="text-sm text-gray-500">Status: <span class="{{ $statusInfo['color'] }}">{{ $statusInfo['text']  }}</span></p>
         <div class="mt-2">
             @foreach($pedido->orderItems as $item)
             <p class="text-sm text-gray-600">{{ $item->product->name }} - Quantidade: {{ $item->quantity }} - Preço: R$ {{ $item->price }}</p>
@@ -73,7 +70,8 @@
     @foreach($pastOrders as $pedido)
     <div class="border-b border-gray-200 mb-4 pb-4">
         <h3 class="text-md font-semibold text-gray-600">Pedido #{{ $pedido->id }}</h3>
-        <p class="text-sm text-gray-500">Status: <span class="text-red-500">{{ $pedido->status }}</span></p>
+        @php $statusInfo = \App\Helpers\StatusHelper::formatStatus($pedido->status); @endphp
+        <p class="text-sm text-gray-500">Status: <span class="{{ $statusInfo['color'] }}">{{ $statusInfo['text']  }}</span></p>
         <div class="mt-2">
             @foreach($pedido->orderItems as $item)
             <p class="text-sm text-gray-600">{{ $item->product->name }} - Quantidade: {{ $item->quantity }} - Preço: R$ {{ $item->price }}</p>
@@ -86,6 +84,6 @@
 
 
 
-
+@include('layouts.footer')
     </div>
 </body>

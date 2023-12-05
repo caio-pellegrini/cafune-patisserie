@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
+use App\Helpers\StatusHelper;
 
 class AdminController extends Controller
 {
@@ -24,6 +25,8 @@ class AdminController extends Controller
         $order->status = $request->status;
         $order->save();
 
-        return back()->with('success', 'Status do pedido '.$orderId.' atualizado com sucesso! ('.$order->status.')');
+        $statusInfo = StatusHelper::formatStatus($request->status);
+
+        return back()->with('success', 'Status do pedido '.$orderId.' atualizado para '.$statusInfo['text']);
     }
 }

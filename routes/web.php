@@ -48,8 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/pedidos', [OrderController::class, 'index'])->name('pedidos');
 });
 
-Route::get('/cardapio', [ProductController::class, 'index'])->name('cardapio'); // Rota para listar todos os produtos
-Route::get('/cardapio/{id}', [ProductController::class, 'show'])->name('detalhes'); // Rota para exibir detalhes de um produto
+Route::get('/cardapio', [ProductController::class, 'index'])->name('cardapio');
+Route::get('/cardapio/{id}', [ProductController::class, 'show'])->name('detalhes');
 
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('exibircarrinho');
 Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('addcarrinho');
