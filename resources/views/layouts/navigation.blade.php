@@ -11,19 +11,23 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-5 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link class="ml-10" :href="route('/')" :active="request()->routeIs('/')">
+                <div class="hidden space-x-5 sm:-my-px sm:ml-10 sm:flex ">
+                    <x-nav-link class="text-xl ml-10" :href="route('/')" :active="request()->routeIs('/')">
                         {{ __('HOME') }}
                     </x-nav-link>
-                    <x-nav-link class="text-5x1" :href="route('sobre-nos')" :active="request()->routeIs('sobre-nos')">
+                    <x-nav-link class="text-xl" :href="route('sobre-nos')" :active="request()->routeIs('sobre-nos')">
                         {{ __('SOBRE NÓS') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('cardapio')" :active="request()->routeIs('cardapio')">
+                    <x-nav-link class="text-xl" :href="route('cardapio')" :active="request()->routeIs('cardapio')">
                         {{ __('CARDÁPIO') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('exibircarrinho')" :active="request()->routeIs('exibircarrinho')">
+                    <x-nav-link class="text-xl" :href="route('exibircarrinho')" :active="request()->routeIs('exibircarrinho')">
                         {{ __('CARRINHO') }}
-                        <span class="red rounded fill" data-badge-caption=""> {{ \Cart::getContent()->count() }} </span>
+                        @if(\Cart::getContent()->count() != '0')
+                        <span class="-mt-2 ml-1 bg-yellow-800 text-white text-xs font-sans mr-2 px-1.5 py-px rounded">
+                            {{ \Cart::getContent()->count() }}
+                        </span>
+                        @endif
                     </x-nav-link>
                 </div>
             </div>
@@ -31,7 +35,6 @@
             <!-- Settings Dropdown -->
             @if (Route::has('login'))
             <div class="flex items-center">
-                <!-- <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10"> -->
 
                 @auth
 
@@ -73,12 +76,12 @@
                 @else
 
                 <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('login')">
+                    <x-nav-link class="text-xl" :href="route('login')">
                         {{ __('ENTRAR') }}
                     </x-nav-link>
 
                     @if (Route::has('register'))
-                    <x-nav-link :href="route('register')">
+                    <x-nav-link class="text-xl" :href="route('register')">
                         {{ __('CADASTRE-SE') }}
                     </x-nav-link>
                     @endif
