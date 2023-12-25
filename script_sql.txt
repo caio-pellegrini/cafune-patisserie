@@ -1,3 +1,15 @@
+INSERT INTO Categoria (categoria)
+VALUES 
+( 'Café'),
+('Bebidas'),
+( 'Chás'),
+( 'Massas'),
+('Salgados'),
+( 'Doces'),
+('Tortas');
+
+
+
 INSERT INTO products (category_id, name, description, price, unit_of_measure, product_image)
 VALUES
 (1, 'Pão Francês', '', 1.00, 'un', '/products/pao_frances.png'),
