@@ -1,3 +1,5 @@
+USE padaria;
+
 INSERT INTO Categoria (categoria)
 VALUES 
 ( 'Café'),
