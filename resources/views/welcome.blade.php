@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-app-layout>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Cafuné Pâtisserie</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-</head>
-
-<body class="antialiased">
-    @include('layouts.navigation')
+    <x-slot name="title">Cafuné Pâtisserie</x-slot>
 
     <div class="container">
 
         <div class="relative w-full overflow-hidden mb-auto sm:h-[60vh] -mt-px">
             <div class="absolute w-full h-full bg-black opacity-60"></div>
+            
             <video class="w-full h-full object-cover" autoplay muted loop>
                 <source src="{{asset('/home/video.mp4')}}" type="video/mp4">
             </video>
@@ -37,8 +17,6 @@
                 </p>
             </div>
         </div>
-
-
 
         <div class="flex justify-center items-center flex-wrap mt-[50px]">
             <img class="p-[10px] max-w-full mb-[60px]" src="{{asset('/home/Destaque 1.png')}}" alt="">
@@ -62,13 +40,7 @@
                 <a class="bg-[#2C2B4C] text-[white] px-[20px] py-[15px] no-underline inline-block text-[15px] cursor-pointer border-[none] rounded-[20px] hover:bg-cafune" href="{{ route('register') }}">JUNTE-SE A NÓS!</a>
             </div>
         </div>
-
-
-
-
+        
     </div>
 
-    @include('layouts.footer')
-</body>
-
-</html>
+</x-app-layout>
