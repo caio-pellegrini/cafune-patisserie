@@ -10,15 +10,71 @@ Bem-vindo ao 'Projeto Cafuné Pâtisserie' – uma solução inovadora para a ge
 - **Processo de Checkout**: Melhorias contínuas no processo de checkout.
 - **Melhorias na Mensagem do Menu**: Diversas melhorias no sistema de mensagens do menu.
 
-## Instalação e Configuração
-Para começar com o 'Projeto Padaria Cafuné':
-1. Clone o repositório:
+## GUIA DE INSTALAÇÃO
+- Crie uma pasta onde ficará todos os arquivos do projeto
+- Abra a pasta no VS Code, abra o terminal e insira o COMANDO ABAIXO PARA DUPLICAR O REPO:
+    
+    ```jsx
+    git clone https://github.com/caio-pellegrini/projeto-cafune-patisserie.git
+    ```
+    
 
-   ``` git clone https://github.com/caio-pellegrini/projeto-cafune-patisserie.git ```
-2. Instale as dependências necessárias:
-``` composer install ```
-3. Configure o ambiente no arquivo ``` .env ```
+## PARA INSTALAR E CONFIGURAR O LARAVEL:
 
+1. De o comando abaixo (vai abrir outra janela, feche a antiga):
+    
+    ```jsx
+    code projeto-cafune-patisserie
+    ```
+    
+2. Se não tiver instaldo na sua máquina, instale o composer pelo site oficial: https://getcomposer.org/ (O composer é o instalador de pacotes do PHP)
+3. Insira o comando (vai instalar os pacotes requeridos na pasta atual)
+    
+    ```jsx
+    composer install
+    ```
+    
+4. Insira o comando abaixo (vai instalar o npm - lembre-se que você precisa ter o node instalado em sua máquina)
+    
+    ```jsx
+    npm install
+    ```
+    
+5. Insira o comando abaixo (vai criar o .env, arquivo de configurações):
+    
+    ```jsx
+    copy .env.example .env
+    ```
+    
+6. Insira o comando abaixo:
+    
+    ```jsx
+    php artisan key:generate
+    ```
+    
+7. LIGUE SUA CONEXÃO MYSQL
+8. Insira o comando abaixo (vai criar o banco e as tables)
+    
+    ```jsx
+    php artisan migrate
+    ```
+    
+
+## PARA RODAR O SERVIDOR
+
+- No terminal do VS Code, insira o comando abaixo:
+    
+    ```jsx
+    npm run dev
+    ```
+    
+- Abra OUTRO terminal, sem fechar o primeiro, e rode o comando abaixo:
+    
+    ```jsx
+    php artisan serve
+    ```
+    
+- Clique no endereço que vai aparecer na tela (geralmente `[[http://127.0.0.1:8000](http://127.0.0.1:8000/)]` )
    
 ## Uso
 Após configurar o projeto, você pode:
