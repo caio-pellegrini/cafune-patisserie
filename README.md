@@ -10,24 +10,29 @@ Bem-vindo ao 'Projeto Cafuné Pâtisserie' – uma solução inovadora para a ge
 - **Processo de Checkout**: Melhorias contínuas no processo de checkout.
 - **Melhorias na Mensagem do Menu**: Diversas melhorias no sistema de mensagens do menu.
 
-## GUIA DE INSTALAÇÃO
-- Crie uma pasta onde ficará todos os arquivos do projeto
-- Abra a pasta no VS Code, abra o terminal e insira o COMANDO ABAIXO PARA DUPLICAR O REPO:
+# GUIA DE INSTALAÇÃO DO PROJETO
+
+**Para instalar o projeto Laravel, todos os passos são necessários!**
+
+## 1. Duplicação do Repositório
+
+1. Crie uma pasta onde ficará todos os arquivos do projeto
+2. Abra a pasta no VS Code e abra o terminal
+3. Insira o COMANDO ABAIXO PARA DUPLICAR O REPO:
+
+```jsx
+git clone https://github.com/caio-pellegrini/projeto-cafune-patisserie.git
+```
+
+## 2. Instalação e Setup do Laravel
+
+1. Se não tiver instalado o Composer na sua máquina, **instale pelo site oficial**: https://getcomposer.org/ (O composer é o instalador de pacotes do PHP)
+2. De o comando abaixo para entrar na pasta:
     
     ```jsx
-    git clone https://github.com/caio-pellegrini/projeto-cafune-patisserie.git
+    cd projeto-cafune-patisserie
     ```
     
-
-## PARA INSTALAR E CONFIGURAR O LARAVEL:
-
-1. De o comando abaixo (vai abrir outra janela, feche a antiga):
-    
-    ```jsx
-    code projeto-cafune-patisserie
-    ```
-    
-2. Se não tiver instaldo na sua máquina, instale o composer pelo site oficial: https://getcomposer.org/ (O composer é o instalador de pacotes do PHP)
 3. Insira o comando (vai instalar os pacotes requeridos na pasta atual)
     
     ```jsx
@@ -60,21 +65,24 @@ Bem-vindo ao 'Projeto Cafuné Pâtisserie' – uma solução inovadora para a ge
     ```
     
 
-## PARA RODAR O SERVIDOR
+## 3. Para RODAR O SERVIDOR
 
-- No terminal do VS Code, insira o comando abaixo:
+1. No terminal do VS Code, insira o comando abaixo:
     
     ```jsx
+    cd projeto-cafune-patisserie
     npm run dev
     ```
     
-- Abra OUTRO terminal, sem fechar o primeiro, e rode o comando abaixo:
+2. Abra OUTRO terminal, sem fechar o primeiro, e rode o comando abaixo:
     
     ```jsx
+    cd projeto-cafune-patisserie
     php artisan serve
     ```
     
-- Clique no endereço que vai aparecer na tela (geralmente `[[http://127.0.0.1:8000](http://127.0.0.1:8000/)]` )
+3. Clique no endereço que vai aparecer na tela (geralmente `[[http://127.0.0.1:8000](http://127.0.0.1:8000/)]` )
+
    
 ## Uso
 Após configurar o projeto, você pode:
