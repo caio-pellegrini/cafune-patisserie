@@ -1,6 +1,7 @@
-USE padaria;
+-- Active: 1710504573272@@127.0.0.1@3306@cafune_patisserie
+USE cafune_patisserie;
 
-INSERT INTO Categoria (categoria)
+INSERT INTO categories (name)
 VALUES 
 ( 'Café'),
 ('Bebidas'),
@@ -9,8 +10,6 @@ VALUES
 ('Salgados'),
 ( 'Doces'),
 ('Tortas');
-
-
 
 INSERT INTO products (category_id, name, description, price, unit_of_measure, product_image)
 VALUES
