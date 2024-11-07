@@ -58,15 +58,4 @@ Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name
 Route::get('/limpar', [CarrinhoController::class, 'limpaCarrinho'])->name('limpacarrinho');
 
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
-    Route::post('/admin/pedidos/{orderId}/update', [AdminController::class, 'update'])->name('admin.orders.update');
-});
-
-Route::get('/admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
-
-
-
-
 require __DIR__.'/auth.php';
