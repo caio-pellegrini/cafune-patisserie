@@ -36,9 +36,9 @@
         <form action="{{ route('novoPedido') }}" method="POST">
             @csrf
 
-            <input type="hidden" name="total" value="{{ \Cart::getTotal() }}">
+            <input type="hidden" name="total" value="{{ Cart::getTotal() }}">
             <input type="hidden" name="user_id" value="{{ $user->id }}">
-            <input type="hidden" name="order_items" value="{{ \Cart::getContent() }}">
+            <input type="hidden" name="order_items" value="{{ Cart::getContent() }}">
             
 
             <div class="py-12">
@@ -153,7 +153,7 @@
                             <div class="mt-4">
                                 <p class="flex justify-between items-center">
                                     <span>Total: </span>
-                                    <span>R$ {{ number_format(\Cart::getTotal(), 2, ',', '.') }}</span>
+                                    <span>R$ {{ number_format(Cart::getTotal(), 2, ',', '.') }}</span>
                                     
                                 </p>
                                 <hr>

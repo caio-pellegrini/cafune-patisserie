@@ -147,7 +147,7 @@
           <tr>
               <td></td>
               <td></td>
-              <td><p class="font-bold">Valor Total: R$ {{ number_format(\Cart::getTotal(), 2, ',', '.') }}</p></td>
+              <td><p class="font-bold">Valor Total: R$ {{ number_format(Cart::getTotal(), 2, ',', '.') }}</p></td>
             </tr>
           </tfoot>
         </table>

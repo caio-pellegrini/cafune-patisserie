@@ -11,10 +11,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Str;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -39,7 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
-    
+
 
     /**
      * The attributes that should be cast.
@@ -58,10 +59,18 @@ class User extends Authenticatable implements MustVerifyEmail
     //     );
     // }
 
+    // TEMPORARIO, PARA BYPASSAR A VERIFICAÇÃO DE EMAIL
+    protected static function booted()
+    {
+        static::creating(function ($user) {
+            $user->email_verified_at = now();
+        });
+    }
+
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn (string $value) => $value,
+            get: fn(string $value) => $value,
         );
     }
 }

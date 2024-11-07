@@ -23,9 +23,9 @@
                     </x-nav-link>
                     <x-nav-link class="text-xl" :href="route('exibircarrinho')" :active="request()->routeIs('exibircarrinho')">
                         {{ __('CARRINHO') }}
-                        @if(\Cart::getContent()->count() != '0')
+                        @if(Cart::getContent()->count() != '0')
                         <span class="-mt-2 ml-1 bg-yellow-800 text-white text-xs font-sans mr-2 px-1.5 py-px rounded">
-                            {{ \Cart::getContent()->count() }}
+                            {{ Cart::getContent()->count() }}
                         </span>
                         @endif
                     </x-nav-link>

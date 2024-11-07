@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 class CarrinhoController extends Controller
 {
     public function carrinhoLista()
     {
-        $itens = \Cart::getContent();
+        $itens = Cart::getContent();
         return view('products.carrinho', compact('itens'));
     }
 
@@ -17,7 +18,7 @@ class CarrinhoController extends Controller
 
         // dd($request->all());
 
-        \Cart::add([
+        Cart::add([
             'id' => $request->id,
             'name' => $request->name,
             'price' => $request->price,
@@ -33,13 +34,13 @@ class CarrinhoController extends Controller
 
     public function removeCarrinho(Request $request)
     {
-        \Cart::remove($request->id);
+        Cart::remove($request->id);
         return redirect()->route('exibircarrinho')->with('sucesso', 'Produto removido do carrinho');
     }
 
     public function atualizaCarrinho(Request $request)
     {
-        \Cart::update($request->id, [
+        Cart::update($request->id, [
             'quantity' => [
                 'relative' => false,
                 'value' => abs($request->quantity)
@@ -50,7 +51,7 @@ class CarrinhoController extends Controller
 
     public function limpaCarrinho()
     {
-        \Cart::clear();
+        Cart::clear();
         return redirect()->route('exibircarrinho')->with('aviso', 'Seu carrinho está vazio');
     }
 }

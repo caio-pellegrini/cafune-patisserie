@@ -9,8 +9,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminAuthController;
 
 
 /*
