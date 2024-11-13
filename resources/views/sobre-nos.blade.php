@@ -4,50 +4,79 @@
 
     <div class="font-aurore bg-white">
 
-        <div id="flex justify-center items-center">
-            <div id="text-[#000] text-center mx-[40px] my-[50px] max-w-[80%]">
-                <h1 class="text-[2.5rem] text-[#000] flex justify-center mt-[50px] text-2.5xl md:text-4xl lg:text-5xl">Cafuné, le goût de l'affection</h1>
+        <div class="flex justify-center items-center py-12 px-10">
+            <div class="text-black text-center">
+                <h1 class="text-2xl md:text-4xl lg:text-5xl mt-10">
+                    Cafuné, le goût de l'affection
+                </h1>
             </div>
         </div>
 
-        <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
-            <p class="mb-[3px] text-[#555]">Bem-vindo à Cafuné Pâtisserie, onde cada doce conta uma história de carinho e sabor. Fundada com paixão e tradição, a Cafuné é mais do que uma simples padaria, é um refúgio de afeto onde os aromas da França se encontram com a calorosa hospitalidade brasileira!</p>
+        <section class="mx-8 sm:mx-64 text-xl mt-8">
+            <p class="mb-1 text-gray-600">
+                Bem-vindo à Cafuné Pâtisserie, onde cada doce conta uma história de carinho e sabor. Fundada com paixão
+                e tradição, a Cafuné é mais do que uma simples padaria, é um refúgio de afeto onde os aromas da França
+                se encontram com a calorosa hospitalidade brasileira!
+            </p>
         </section>
 
-        <section class="items-center p-[5px] flex justify-center items-center flex-wrap text-center max-w-[800px] mx-[auto] my-[0] bg-[#f8f8f8] p-[10px] border-[1px] border-[solid] border-[#ddd] mt-[50px] mb-[50px]">
-            <div class="flex-[1] text-justify p-[20px] font-['Lateef',_serif] text-[18px]">
-                <p class="mb-[3px] text-[#555]">Nossa fundadora, Margot Blanc, nascida em Paris, trouxe consigo não apenas receitas tradicionais, mas também a essência da cidade do amor. Apaixonada pela arte da pâtisserie desde jovem, ela veio ao Brasil,onde decidiu criar a Cafuné, uma padaria de alto padrão.</p>
-                <p class="mb-[3px] text-[#555]">Essa grande mulher tornou seu sonho realidade e trouxe um lugar com experiência única para os brasileiros.</p>
+
+        <section
+            class="flex items-center justify-center flex-wrap text-center max-w-3xl mx-auto my-0 bg-gray-100 p-4 border border-gray-300 mt-12 mb-12">
+            <div class="flex-1 text-justify p-5 font-serif text-base">
+                <p class="mb-1 text-gray-600">
+                    Nossa fundadora, Margot Blanc, nascida em Paris, trouxe consigo não apenas receitas tradicionais,
+                    mas também a essência da cidade do amor. Apaixonada pela arte da pâtisserie desde jovem, ela veio ao
+                    Brasil, onde decidiu criar a Cafuné, uma padaria de alto padrão.
+                </p>
+                <p class="mb-1 text-gray-600">
+                    Essa grande mulher tornou seu sonho realidade e trouxe um lugar com experiência única para os
+                    brasileiros.
+                </p>
             </div>
-            <img class="max-w-[80%] h-[280px] max-w-full h-auto p-[15px] transition-transform transform hover:scale-110" src="{{ asset('/images/Criadora.png') }}" alt="Margot Blanc">
+            <img class="max-w-full h-auto p-4 transition-transform transform hover:scale-110"
+                src="{{ asset('/images/Criadora.png') }}" alt="Margot Blanc">
         </section>
 
 
-        <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
-            <p class="mb-[3px] text-[#555]">Queremos que cada visita à Cafuné seja como um abraço caloroso. Nosso ambiente foi projetado para oferecer não apenas deliciosas opções de pâtisserie, mas também um espaço onde os clientes se sintam em casa.</p>
+
+        <section class="mx-8 sm:mx-64 text-xl mt-8">
+            <p class="mb-1 text-gray-600">
+                Queremos que cada visita à Cafuné seja como um abraço caloroso. Nosso ambiente foi projetado para
+                oferecer não apenas deliciosas opções de pâtisserie, mas também um espaço onde os clientes se sintam em
+                casa.
+            </p>
         </section>
 
-        <section class="max-w-[800px] mx-[auto] my-[0] px-[20px] py-[40px] text-center">
-            <img class="max-w-[80%] h-[300px] max-w-full block mx-[auto] my-[0] transition-transform transform hover:scale-110" src="{{ asset('/images/Retrô.png') }}" alt="A primeira loja Cafuné do Brasil - 1963" class="cafuné-image">
-            <p class="text-[14px] mt-[10px] font-['Lateef',_serif] text-[#707070]">
+
+        <section class="max-w-2xl mx-auto my-0 px-5 py-10 text-center">
+            <img class="w-4/5 h-[300px] max-w-full block mx-auto my-0 transition-transform transform hover:scale-105"
+                src="{{ asset('/images/Retrô.png') }}" alt="A primeira loja Cafuné do Brasil - 1963">
+            <p class="text-sm mt-2 font-serif text-gray-500">
                 A primeira loja Cafuné do Brasil - 1963
             </p>
         </section>
 
-        <section class="ml-[80px] mr-[80px] sm:ml-[250px] sm:mr-[250px] text-[20px] mt-[30px]">
-            Na Cafuné, acreditamos que a boa comida tem o poder de unir as pessoas. Estamos aqui para compartilhar um pedacinho da França, um sorriso acolhedor e, é claro, muitos doces momentos com você. Seja bem-vindo à nossa casa, a Cafuné Pâtisserie.
+
+        <section class="mx-8 sm:mx-64 text-lg mt-8">
+            Na Cafuné, acreditamos que a boa comida tem o poder de unir as pessoas. Estamos aqui para compartilhar um
+            pedacinho da França, um sorriso acolhedor e, é claro, muitos doces momentos com você. Seja bem-vindo à nossa
+            casa, a Cafuné Pâtisserie.
         </section>
 
         <hr>
 
-        <h3 class="mt-[30px] text-[28px] text-center">Lojas Atuais</h3>
+        <h3 class="mt-8 text-3xl text-center">Lojas Atuais</h3>
 
-        <section class="flex justify-center items-center flex-wrap mx-[0] mt-[20px] mb-20">
-            <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 1.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
-            <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 2.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
-            <img class="max-w-[80%] h-[300px] max-w-[33%] m-[10px] transition-transform transform hover:scale-110" src="{{ asset('/images/Fachada 3.png') }}" alt="" class="cafuné-image" onclick="zoomImage(this)">
+        <section class="flex justify-center items-center flex-wrap mt-5 mb-20">
+            <img class="h-80 max-w-1/3 m-2 transition-transform transform hover:scale-105 cursor-pointer"
+                src="{{ asset('/images/Fachada 1.png') }}" alt="Imagem da Fachada 1">
+            <img class="h-80 max-w-1/3 m-2 transition-transform transform hover:scale-105 cursor-pointer"
+                src="{{ asset('/images/Fachada 2.png') }}" alt="Imagem da Fachada 2">
+            <img class="h-80 max-w-1/3 m-2 transition-transform transform hover:scale-105 cursor-pointer"
+                src="{{ asset('/images/Fachada 3.png') }}" alt="Imagem da Fachada 3">
         </section>
 
     </div>
-    
+
 </x-app-layout>
