@@ -46,7 +46,7 @@
 
 
 
-    <div class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white {{ request()->routeIs('cardapio') ? 'pt-16' : '' }}">
+    <div class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white {{ request()->routeIs('cardapio') ? 'pt-16' : '' }}"> 
         {{--Links acesso rápido --}}
         <div class="flex justify-center space-x-4 bg-gray-100 p-4 fixed  w-full z-50 ">
 

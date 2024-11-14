@@ -9,6 +9,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use Illuminate\Http\Request;
+
 
 
 /*
@@ -40,10 +42,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile/image', [ImageController::class, 'update'])->name('profile.image');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/checkout', [CheckoutController::class, 'resumoPedido'])->name('listarCheckout');
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('listarCheckout');
+    Route::get('/checkout-success', [CheckoutController::class, 'checkoutSuccess'])->name('checkout-success');
+    Route::get('/checkout-cancel', function () {
+        return view('welcome');
+    })->name('checkout-cancel');
+
 
     Route::post('/pedidos', [OrderController::class, 'store'])->name('novoPedido');
     Route::get('/pedidos', [OrderController::class, 'index'])->name('pedidos');
+
 });
 
 Route::get('/cardapio', [ProductController::class, 'index'])->name('cardapio');

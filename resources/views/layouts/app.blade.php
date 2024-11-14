@@ -35,9 +35,16 @@
 
         <!-- Page Content -->
         <main>
-            <div class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 selection:text-white px-4 sm:px-56">
-                {{ $slot }}
-            </div>
+            @if (!isset($dontPresetSlot))
+                <div
+                    class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 selection:text-white px-4 sm:px-56">
+                    {{ $slot }}
+                </div>
+            @else
+                <div>
+                    {{ $slot }}
+                </div>
+            @endif
         </main>
     </div>
 
