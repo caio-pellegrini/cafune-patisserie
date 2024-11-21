@@ -3,30 +3,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
     <!-- Styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 1,
-                'wght' 600,
-                'GRAD' 0,
-                'opsz' 24
-        }
-
-        .material-google {
-            color: white;
-        }
-    </style>
-
-
-    <!-- Popup Message Box -->
-    <div id="popup-message"
-        class="hidden fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded shadow-lg p-4 z-50">
-        <p id="popup-message-content" class="text-sm text-gray-700">Your message here...</p>
-    </div>
 
     <div
         class="sm:justify-center sm:items-center relative min-h-screen bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
@@ -120,8 +99,9 @@
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $item->id }}">
-                                                <button class="btn-floating waves-effect waves-light red"><i
-                                                        class="material-icons">delete</i></button>
+                                                <button class="btn-floating waves-effect waves-light red">
+                                                    <x-fas-trash class="w-6 h-6"/>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
@@ -147,22 +127,22 @@
 
 
                         <a href="{{ route('cardapio') }}"
-                            class="inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                            <span class="material-symbols-outlined material-google mr-1">arrow_back</span>
+                            class="inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur  focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                            <x-fas-arrow-left class="w-6 h-6 mr-2"/>
                             Continuar comprando
                         </a>
 
 
                         <a href="{{ route('limpacarrinho') }}"
-                            class="inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                            <span class="material-symbols-outlined material-google mr-1">clear</span>
+                            class="inline-flex items-center px-4 py-2 bg-cafune border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-azur focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                            <x-fas-broom class="w-6 h-6 mr-2"/>
                             Limpar carrinho
                         </a>
 
 
                         <a id="finalizar-pedido" @auth href="{{ route('listarCheckout') }}" @endauth
-                            class="inline-flex items-center px-4 py-2 bg-green-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-900 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                            <span class="material-symbols-outlined material-google mr-1">check</span>
+                            class="inline-flex items-center px-4 py-2 bg-green-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-900 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                            <x-fas-check class="w-6 h-6 mr-2"/>
                             Finalizar Pedido
                         </a>
 
@@ -170,13 +150,6 @@
                     </div>
 
                 @endif
-
-
-                <form id="checkout-form" method="POST" action="{{ route('listarCheckout') }}">
-                    @csrf
-                    <input type="hidden" name="shipping_address" id="shipping_address" value="Rua Exemplo, 123">
-                    <input type="hidden" name="products" id="products">
-                </form>
 
             </div>
 

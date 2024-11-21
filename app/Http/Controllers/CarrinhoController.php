@@ -15,9 +15,6 @@ class CarrinhoController extends Controller
 
     public function adicionaCarrinho(Request $request)
     {
-
-        // dd($request->all());
-
         Cart::add([
             'id' => $request->id,
             'name' => $request->name,
